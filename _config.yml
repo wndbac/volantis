@@ -40,8 +40,9 @@ cdn_system:
     # 自定义配置 使用 "theme/_cdn.yml" 中的名称作为配置项的键
     custom:
       busuanzi: https://npm.elemecdn.com/penndu@1.0.0/bsz.js # 杜老师友情赞助
-      artalk_js: https://static.wndbac.cn/storage/artalk/Artalk.js
-      artalk_css: https://static.wndbac.cn/storage/artalk/Artalk.css
+      artalk_css: https://o.static.szyink.com/storage/artalk/Artalk.css
+      artalk_js: https://o.static.szyink.com/storage/artalk/Artalk.js
+      #fontawesome: https://static.wndbac.cn/storage/fontawesome-pro/css/all.min.css
       #volantis_style: /css/style.css
       #volantis_app: /js/app.js
 
@@ -172,15 +173,19 @@ navbar:
         - name: RSS订阅
           icon: fa-duotone fa-rss PETERRIVE
           url: atom.xml
-        - name: 新冠实时疫情图
-          icon: fa-duotone fa-signal WISTERIA
-          url: virus/
         - name: 去不图床
-          icon: fa-duotone fa-image BELIZEHOLE
+          icon: fa-duotone fa-globe BELIZEHOLE
           url: https://7bu.top
-        - name: 每日早报
+        - name: 早报
           icon: fa-duotone fa-newspaper TURQUOISE
           url: https://news.wndbac.cn
+        - name: ChatGPT机器人
+          icon: fa-duotone fa-robot PETERRIVE
+          url: https://chatgpt.wndbac.cn
+        - name: hr
+        - name: 访客统计
+          icon: fa-duotone fa-align-left fa-fw CARROT
+          url: https://u.xiaozonglin.cn
     - name: 更多
       icon: fa-duotone fa-ellipsis-v PETERRIVE
       rows:
@@ -427,7 +432,7 @@ article:
 comments:
   title: <i class='fa-duotone light-blue fa-comments'></i> 评论
   subtitle:
-  service:
+  service: artalk
   # 可选评论系统 #
 
   # artalk
@@ -624,7 +629,7 @@ sidebar:
     # announcement widget
     announcement:
       class: text
-      display: [desktop]
+      display: [desktop, mobile]
       header:
         icon: fa-duotone fa-bullhorn AMETHYST
         title: 公告
@@ -635,7 +640,7 @@ sidebar:
     # maps widget
     maps:
       class: grid
-      display: [desktop]
+      display: [desktop, mobile]
       header:
         icon: fa-duotone fa-map-signs PETERRIVE
         title: 导航
@@ -650,9 +655,9 @@ sidebar:
         - name: 留言板
           icon: fa-duotone fa-comment-alt-smile PETERRIVE
           url: /messages/
-        - name: 新冠实时疫情图
-          icon: fa-duotone fa-signal BELIZEHOLE
-          url: /virus/
+        - name: ChatGPT机器人
+          icon: fa-duotone fa-robot PETERRIVE
+          url: https://chatgpt.wndbac.cn
         - name: 开往
           icon: fa-duotone fa-paper-plane SUNFLOWER
           url: https://travellings.now.sh
@@ -667,12 +672,34 @@ sidebar:
         title: 推荐
       rows:
         - name: 杜老师说
-          img: https://cdn.dusays.com/avatar.png
+          img: https://static.wndbac.cn/links/du.png
           url: https://dusays.com
           target: _blank
         - name: BeaCox
-          img: https://blog.beacox.space/img/avatar.png
+          img: https://static.wndbac.cn/links/beacox.png
           url: https://blog.beacox.space
+          target: _blank
+    # ---------------------------------------
+    # notes widget
+    notes:
+      class: list
+      sticky: false
+      display: [desktop, mobile]
+      header:
+        icon: fa-duotone fa-flower-daffodil
+        title: 笔记本
+      rows:
+        - name: HTML
+          icon: fad fa-kerning
+          url: https://www.runoob.com/html/html-tutorial.html
+          target: _blank
+        - name: JavaScript
+          icon: fad fa-kerning
+          url: https://www.runoob.com/js/js-tutorial.html
+          target: _blank
+        - name: CSS
+          icon: fad fa-kerning
+          url: https://www.runoob.com/css/css-tutorial.html
           target: _blank
     # ---------------------------------------
     # toc widget (valid only in articles)
@@ -728,7 +755,7 @@ sidebar:
     # webinfo widget
     webinfo:
       class: webinfo
-      display: [desktop]
+      display: [desktop, mobile]
       header:
         icon: fa-duotone fa-award TURQUOISE
         title: 站点信息
